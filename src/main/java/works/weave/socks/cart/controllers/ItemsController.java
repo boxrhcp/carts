@@ -35,7 +35,7 @@ public class ItemsController {
         return new FoundItem(() -> getItems(customerId), () -> new Item(itemId)).get();
     }
 
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
     public List<Item> getItems(@PathVariable String customerId) {
         return cartsController.get(customerId).contents();
