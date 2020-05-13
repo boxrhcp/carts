@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
 
+IMAGE=carts
+GROUP=weaveworksdemos
+COMMIT=test
 set -ev
-
-export BUILD_VERSION="0.0.2-SNAPSHOT"
-export BUILD_DATE=`date +%Y-%m-%dT%T%z`
 
 SCRIPT_DIR=$(dirname "$0")
 
-if [[ -z "$GROUP" ]] ; then
-    echo "Cannot find GROUP env var"
-    exit 1
-fi
+#if [[ -z "$GROUP" ]] ; then
+#    echo "Cannot find GROUP env var"
+#    exit 1
+#fi
 
-if [[ -z "$COMMIT" ]] ; then
-    echo "Cannot find COMMIT env var"
-    exit 1
-fi
+#if [[ -z "$COMMIT" ]] ; then
+#    echo "Cannot find COMMIT env var"
+#    exit 1
+#fi
 
 if [[ "$(uname)" == "Darwin" ]]; then
     DOCKER_CMD=docker
