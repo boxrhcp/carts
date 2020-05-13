@@ -38,6 +38,11 @@ public class ItemsController {
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
     public List<Item> getItems(@PathVariable String customerId) {
+        try{
+            Thread.sleep(2000);}
+        catch(Exception e){
+            LOG.error("error in sleep");
+        }
         return cartsController.get(customerId).contents();
     }
 
