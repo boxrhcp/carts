@@ -11,14 +11,14 @@ import java.util.List;
 @Document
 public class Cart {
     @NotNull
-    public String customerId; // Public instead of getters/setters.
+    public String custId; // Public instead of getters/setters.
     @Id
     private String id;
     @DBRef
     private List<Item> items = new ArrayList<>();
 
-    public Cart(String customerId) {
-        this.customerId = customerId;
+    public Cart(String custId) {
+        this.custId = custId;
     }
 
     public Cart() {
@@ -43,7 +43,7 @@ public class Cart {
     public String toString() {
         return "Cart{" +
                 "id='" + id + '\'' +
-                ", customerId='" + customerId + '\'' +
+                ", custId='" + custId + '\'' +
                 ", items=" + items +
                 '}';
     }
@@ -55,7 +55,7 @@ public class Cart {
 
         Cart cart = (Cart) o;
 
-        if (customerId != null ? !customerId.equals(cart.customerId) : cart.customerId != null) return false;
+        if (custId != null ? !custId.equals(cart.custId) : cart.custId != null) return false;
         if (id != null ? !id.equals(cart.id) : cart.id != null) return false;
 
         return true;
@@ -63,7 +63,7 @@ public class Cart {
 
     @Override
     public int hashCode() {
-        int result = customerId != null ? customerId.hashCode() : 0;
+        int result = custId != null ? custId.hashCode() : 0;
         result = 31 * result + (id != null ? id.hashCode() : 0);
         return result;
     }
